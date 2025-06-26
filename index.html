@@ -106,7 +106,6 @@
             transition: color 0.3s ease;
             position: relative;
             z-index: 1;
-            font-family: inherit;
         }
 
         .tab-button.active {
@@ -115,7 +114,7 @@
 
         .form-container {
             position: relative;
-            min-height: 300px;
+            overflow: hidden;
         }
 
         .form-panel {
@@ -144,7 +143,6 @@
             font-weight: 500;
             color: #e2e8f0;
             margin-bottom: 8px;
-            font-family: inherit;
         }
 
         .form-input {
@@ -155,12 +153,11 @@
             border-radius: 12px;
             color: #f8fafc;
             font-size: 16px;
-            font-family: inherit;
             transition: all 0.3s ease;
-            outline: none;
         }
 
         .form-input:focus {
+            outline: none;
             border-color: #3b82f6;
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
             background: rgba(15, 23, 42, 1);
@@ -168,7 +165,6 @@
 
         .form-input::placeholder {
             color: #64748b;
-            font-family: inherit;
         }
 
         .password-container {
@@ -187,7 +183,6 @@
             font-size: 18px;
             padding: 4px;
             transition: color 0.3s ease;
-            font-family: inherit;
         }
 
         .password-toggle:hover {
@@ -197,7 +192,6 @@
         .password-strength {
             margin-top: 8px;
             font-size: 12px;
-            font-family: inherit;
         }
 
         .strength-bar {
@@ -242,7 +236,6 @@
             cursor: pointer;
             position: relative;
             transition: all 0.3s ease;
-            appearance: none;
         }
 
         .checkbox:checked {
@@ -265,7 +258,6 @@
             font-size: 14px;
             color: #cbd5e1;
             cursor: pointer;
-            font-family: inherit;
         }
 
         .submit-button {
@@ -281,7 +273,6 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            font-family: inherit;
         }
 
         .submit-button:hover {
@@ -321,7 +312,6 @@
             margin-top: 24px;
             font-size: 14px;
             color: #94a3b8;
-            font-family: inherit;
         }
 
         .form-link a {
@@ -348,7 +338,6 @@
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
-            font-family: inherit;
         }
 
         .toast.show {
@@ -390,13 +379,11 @@
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 8px;
-            font-family: inherit;
         }
 
         .welcome-email {
             color: #94a3b8;
             margin-bottom: 24px;
-            font-family: inherit;
         }
 
         .logout-button {
@@ -408,7 +395,6 @@
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-family: inherit;
         }
 
         .logout-button:hover {
@@ -455,12 +441,12 @@
                         <form id="login-form">
                             <div class="form-group">
                                 <label class="form-label">Email</label>
-                                <input type="email" class="form-input" placeholder="example@email.com" required name="email">
+                                <input type="email" class="form-input" placeholder="example@email.com" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Mật khẩu</label>
                                 <div class="password-container">
-                                    <input type="password" class="form-input" placeholder="Nhập mật khẩu" required name="password">
+                                    <input type="password" class="form-input" placeholder="Nhập mật khẩu" required>
                                     <button type="button" class="password-toggle">👁️</button>
                                 </div>
                             </div>
@@ -483,16 +469,16 @@
                         <form id="register-form">
                             <div class="form-group">
                                 <label class="form-label">Họ và tên</label>
-                                <input type="text" class="form-input" placeholder="Nguyễn Văn A" required name="fullname">
+                                <input type="text" class="form-input" placeholder="Nguyễn Văn A" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Email</label>
-                                <input type="email" class="form-input" placeholder="example@email.com" required name="email">
+                                <input type="email" class="form-input" placeholder="example@email.com" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Mật khẩu</label>
                                 <div class="password-container">
-                                    <input type="password" class="form-input" placeholder="Tạo mật khẩu mạnh" required name="password">
+                                    <input type="password" class="form-input" placeholder="Tạo mật khẩu mạnh" required>
                                     <button type="button" class="password-toggle">👁️</button>
                                 </div>
                                 <div class="password-strength">
@@ -508,7 +494,7 @@
                             <div class="form-group">
                                 <label class="form-label">Xác nhận mật khẩu</label>
                                 <div class="password-container">
-                                    <input type="password" class="form-input" placeholder="Nhập lại mật khẩu" required name="confirmPassword">
+                                    <input type="password" class="form-input" placeholder="Nhập lại mật khẩu" required>
                                     <button type="button" class="password-toggle">👁️</button>
                                 </div>
                             </div>
@@ -531,7 +517,7 @@
                         <form id="forgot-form">
                             <div class="form-group">
                                 <label class="form-label">Email khôi phục</label>
-                                <input type="email" class="form-input" placeholder="Nhập email của bạn" required name="email">
+                                <input type="email" class="form-input" placeholder="Nhập email của bạn" required>
                             </div>
                             <button type="submit" class="submit-button">
                                 <span class="button-spinner"></span>
@@ -560,15 +546,16 @@
 
     <script>
         // Supabase Configuration
-        const SUPABASE_URL = 'https://tkmpdpalwhfkiumxgpbn.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRrbXBkcGFsd2hma2l1bXhncGJuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA2ODkwMDksImV4cCI6MjA2NjI2NTAwOX0.BSS6e-hPvLqjw7c5WuC_XoMK3Naxx8hcxypg52kGSbY';
-
+        const SUPABASE_URL = 'YOUR_SUPABASE_URL';
+        const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+        
         // Initialize Supabase client
         let supabase;
         try {
             supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         } catch (error) {
             console.log('Supabase not configured. Please add your credentials.');
+            // Fallback for demo purposes
             supabase = {
                 auth: {
                     signInWithPassword: async () => ({ error: { message: 'Supabase not configured' } }),
@@ -632,8 +619,9 @@
             // Login form
             document.getElementById('login-form').addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const email = e.target.querySelector('input[name="email"]').value;
-                const password = e.target.querySelector('input[name="password"]').value;
+                const formData = new FormData(e.target);
+                const email = e.target.querySelector('input[type="email"]').value;
+                const password = e.target.querySelector('input[type="password"]').value;
                 
                 await handleLogin(email, password);
             });
@@ -641,10 +629,11 @@
             // Register form
             document.getElementById('register-form').addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const fullName = e.target.querySelector('input[name="fullname"]').value;
-                const email = e.target.querySelector('input[name="email"]').value;
-                const password = e.target.querySelector('input[name="password"]').value;
-                const confirmPassword = e.target.querySelector('input[name="confirmPassword"]').value;
+                const inputs = e.target.querySelectorAll('input');
+                const fullName = inputs[0].value;
+                const email = inputs[1].value;
+                const password = inputs[2].value;
+                const confirmPassword = inputs[3].value;
 
                 if (password !== confirmPassword) {
                     showToast('Mật khẩu xác nhận không khớp!', 'error');
@@ -657,7 +646,7 @@
             // Forgot password form
             document.getElementById('forgot-form').addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const email = e.target.querySelector('input[name="email"]').value;
+                const email = e.target.querySelector('input[type="email"]').value;
                 await handleForgotPassword(email);
             });
         }
@@ -677,7 +666,7 @@
 
         function setupPasswordStrength() {
             const registerPanel = document.getElementById('register-panel');
-            const passwordInput = registerPanel.querySelector('input[name="password"]');
+            const passwordInput = registerPanel.querySelector('input[type="password"]');
             
             passwordInput.addEventListener('input', (e) => {
                 const password = e.target.value;
@@ -866,6 +855,13 @@
             // Reset forms
             document.querySelectorAll('form').forEach(form => form.reset());
             switchTab('login');
+        }
+
+        // Demo mode notification
+        if (SUPABASE_URL === 'YOUR_SUPABASE_URL') {
+            setTimeout(() => {
+                showToast('Demo mode - Hãy cấu hình Supabase để sử dụng đầy đủ tính năng', 'error');
+            }, 2000);
         }
     </script>
 </body>
